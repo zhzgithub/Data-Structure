@@ -110,6 +110,23 @@
 		ListInsert(*L,i,e):在线性表L中第i个位置插入新元素e
 		ListDelete(*L,i,*e):删除线性表L中第i个位置元素，并用返回其值e
 		ListLength(L):返回线性表L的元素个数
+		
+		void unionL(List *La,list Lb)
+		{
+			int La_len,Lb_len,i;
+			ElemType e;
+			La_len=ListLength(*La);
+			Lb_len=ListLength(La);
+			
+			for(i=1;i<=Lb_len;i++)
+			{
+				GetElem(Lb,i,&e);
+				if(!LocateElem(*La,e))
+				{
+					ListInsert(La,++La_len,e);
+				}
+			}
+		}
 	
 	
 	
